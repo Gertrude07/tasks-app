@@ -28,24 +28,35 @@ $stmt->close();
 if (!$task) { die("Task not found."); }
 ?>
 <!DOCTYPE html>
-<html>
-<head><title>Edit Task</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-<h2>Edit Task</h2>
-<form method="POST" action="edit.php">
-    <input type="hidden" name="id" value="<?php echo $task['id']; ?>">
-    <label>Title</label><br>
-    <input type="text" name="title" value="<?php echo htmlspecialchars($task['title']); ?>" required><br>
-    <label>Description</label><br>
-    <textarea name="description"><?php echo htmlspecialchars($task['description']); ?></textarea><br>
-    <label>Status</label><br>
-    <select name="status">
-        <option value="pending" <?php echo $task['status']==='pending'?'selected':''; ?>>Pending</option>
-        <option value="in_progress" <?php echo $task['status']==='in_progress'?'selected':''; ?>>In Progress</option>
-        <option value="done" <?php echo $task['status']==='done'?'selected':''; ?>>Done</option>
-    </select><br>
-    <button type="submit">Update Task</button>
-</form>
-<a href="index.php">Back</a>
+<div class="wrap">
+    <h2>Edit task</h2>
+    <form method="POST" action="edit.php">
+        <input type="hidden" name="id" value="<?php echo $task['id']; ?>">
+
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" value="<?php echo htmlspecialchars($task['title']); ?>" required>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description"><?php echo htmlspecialchars($task['description']); ?></textarea>
+
+        <label for="status">Status</label>
+        <select id="status" name="status">
+            <option value="pending" <?php echo $task['status']==='pending'?'selected':''; ?>>Pending</option>
+            <option value="in_progress" <?php echo $task['status']==='in_progress'?'selected':''; ?>>In progress</option>
+            <option value="done" <?php echo $task['status']==='done'?'selected':''; ?>>Done</option>
+        </select>
+
+        <button type="submit">Update task</button>
+    </form>
+    <a class="back" href="index.php">Back to tasks</a>
+</div>
 </body>
 </html>

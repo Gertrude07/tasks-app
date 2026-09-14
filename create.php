@@ -17,23 +17,33 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?>
 <!DOCTYPE html>
-<html>
-<head><title>Add Task</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add a task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-<h2>Add Task</h2>
-<form method="POST" action="create.php">
-    <label>Title</label><br>
-    <input type="text" name="title" required><br>
-    <label>Description</label><br>
-    <textarea name="description"></textarea><br>
-    <label>Status</label><br>
-    <select name="status">
-        <option value="pending">Pending</option>
-        <option value="in_progress">In Progress</option>
-        <option value="done">Done</option>
-    </select><br>
-    <button type="submit">Save Task</button>
-</form>
-<a href="index.php">Back</a>
+<div class="wrap">
+    <h2>Add a task</h2>
+    <form method="POST" action="create.php">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description"></textarea>
+
+        <label for="status">Status</label>
+        <select id="status" name="status">
+            <option value="pending">Pending</option>
+            <option value="in_progress">In progress</option>
+            <option value="done">Done</option>
+        </select>
+
+        <button type="submit">Save task</button>
+    </form>
+    <a class="back" href="index.php">Back to tasks</a>
+</div>
 </body>
 </html>
