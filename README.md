@@ -3,20 +3,15 @@
 A simple CRUD (Create, Read, Update, Delete) task manager built with PHP and MySQL.
 
 ## Live Demo
-http://169.239.251.102:442/~gertrude.akagbo/tasks-app/
+http://169.239.251.102:442/~gertrude.akagbo/E_Commerce_Labs/tasks-app/
 
 ## Setup
-
-1. Copy `db.example.php` to `db.php`:
-   ```
-   cp db.example.php db.php
-   ```
-2. Edit `db.php` with your own database credentials.
-3. Visit `setup.php` in your browser to create the `tasks` table.
-4. Visit `index.php` to use the app.
+1. Edit `db.php` with your own database credentials.
+2. Visit `setup.php` in your browser to create the `tasks` table.
+3. Visit `index.php` to use the app.
 
 ## Files
-- `db.php` — database connection (not committed, see db.example.php)
+- `db.php` — database connection
 - `setup.php` — creates the tasks table
 - `index.php` — lists all tasks (Read)
 - `create.php` — add a new task (Create)
